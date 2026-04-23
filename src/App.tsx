@@ -64,10 +64,10 @@ export default function App() {
               </a>
             ))}
             <div className="flex items-center gap-4 ml-4">
-              <button className="px-5 py-2 rounded-full bg-slate-800 text-white text-sm font-semibold hover:bg-slate-700 transition-colors">
-                Sign In
-              </button>
-              <button className="px-5 py-2 rounded-full bg-sky-500 text-white text-sm font-semibold hover:bg-sky-400 transition-colors">
+              <button 
+                onClick={() => scrollToSection('#contact')}
+                className="px-5 py-2 rounded-full bg-sky-500 text-white text-sm font-semibold hover:bg-sky-400 transition-colors"
+              >
                 Check Availability
               </button>
             </div>
@@ -108,10 +108,10 @@ export default function App() {
                 </a>
               ))}
               <div className="flex flex-col gap-4 mt-4">
-                <button className="bg-slate-800 text-white px-6 py-4 rounded-xl text-lg font-semibold w-full border border-slate-700">
-                  Sign In
-                </button>
-                <button className="bg-sky-500 text-white px-6 py-4 rounded-xl text-lg font-semibold w-full">
+                <button 
+                  onClick={() => scrollToSection('#contact')}
+                  className="bg-sky-500 text-white px-6 py-4 rounded-xl text-lg font-semibold w-full"
+                >
                   Check Availability
                 </button>
               </div>
@@ -508,7 +508,7 @@ export default function App() {
                 <li><a href="#" className="hover:text-sky-400 transition-colors">Residential Plans</a></li>
                 <li><a href="#" className="hover:text-sky-400 transition-colors">Business Solutions</a></li>
                 <li><a href="#" className="hover:text-sky-400 transition-colors">Fiber Expansion</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Check Availability</a></li>
+                <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('#contact'); }} className="hover:text-sky-400 transition-colors">Check Availability</a></li>
               </ul>
             </div>
             
