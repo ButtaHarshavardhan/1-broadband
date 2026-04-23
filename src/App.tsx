@@ -148,8 +148,8 @@ export default function App() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-0 max-w-xl w-full">
                   <input type="text" placeholder="Enter Postcode (e.g. SW1A 1AA)" className="flex-1 px-6 py-4 rounded-t-2xl sm:rounded-l-2xl sm:rounded-tr-none bg-slate-800 border sm:border-r-0 border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 text-white placeholder:text-slate-500" />
-                  <button className="px-8 py-4 bg-sky-500 rounded-b-2xl sm:rounded-r-2xl sm:rounded-bl-none font-bold text-white hover:bg-sky-400 transition-colors whitespace-nowrap">
-                    Find My Speed
+                  <button onClick={() => scrollToSection('#contact')} className="px-8 py-4 bg-sky-500 rounded-b-2xl sm:rounded-r-2xl sm:rounded-bl-none font-bold text-white hover:bg-sky-400 transition-colors whitespace-nowrap">
+                    Check Availability
                   </button>
                 </div>
                 
