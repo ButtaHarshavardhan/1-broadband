@@ -202,12 +202,12 @@ export default function App() {
                 viewport={{ once: true }}
                 className="order-2 md:order-1"
               >
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Fiber optic cables" className="w-full h-48 object-cover" />
+                <div className="grid grid-cols-2 gap-4 items-start">
+                  <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl h-64 relative">
+                    <img src="https://i.ibb.co/QFq4L71t/Gemini-Generated-Image-q02fdvq02fdvq02f-1.png" alt="Fiber optic cables" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
-                  <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl mt-8">
-                    <img src="https://images.unsplash.com/photo-1614064641913-6b71408848eb?q=80&w=1964&auto=format&fit=crop" alt="Server room" className="w-full h-64 object-cover" />
+                  <div className="rounded-2xl overflow-hidden border border-slate-800 shadow-xl mt-8 h-64 relative">
+                    <img src="https://i.ibb.co/GfytBq2J/Gemini-Generated-Image-q02fdvq02fdvq02f.png" alt="Server room" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                 </div>
               </motion.div>
