@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity } from 'lucide-react';
 import { AuraButton } from './components/AuraButton';
 
-const SectorCard = ({ post, delay }: { post: any, delay: number }) => {
-  const [expanded, setExpanded] = useState(false);
-  
+const SectorCard = ({ post, delay, expanded, onClick }: { post: any, delay: number, expanded: boolean, onClick: () => void }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -13,7 +11,7 @@ const SectorCard = ({ post, delay }: { post: any, delay: number }) => {
       viewport={{ once: true }}
       transition={{ delay }}
       className="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 cursor-pointer shadow-lg hover:border-sky-500/50 transition-colors"
-      onClick={() => setExpanded(!expanded)}
+      onClick={onClick}
     >
       <div className="relative h-60 overflow-hidden">
         <img 
@@ -49,6 +47,7 @@ const SectorCard = ({ post, delay }: { post: any, delay: number }) => {
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedSector, setExpandedSector] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -419,7 +418,13 @@ export default function App() {
                   )
                 }
               ].map((post, i) => (
-                <SectorCard key={i} post={post} delay={i * 0.1} />
+                <SectorCard 
+                  key={i} 
+                  post={post} 
+                  delay={i * 0.1} 
+                  expanded={expandedSector === i}
+                  onClick={() => setExpandedSector(expandedSector === i ? null : i)}
+                />
               ))}
             </div>
           </div>
