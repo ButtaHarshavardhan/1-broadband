@@ -220,10 +220,13 @@ export default function App() {
                 </div>
                 <h3 className="text-4xl font-extrabold text-white mb-6 tracking-tight">Connecting communities since 2010.</h3>
                 <p className="text-lg text-slate-400 mb-6 leading-relaxed">
-                  At One Broadband, we believe access to fast, reliable internet is a fundamental right. We didn't start this company just to be another ISP, but to revolutionize how you experience the digital world.
+                  Led by Sreedhar R. M. and Managing Director Madhav Reddy, ONE Broadband leverages over 15 years of industry experience to deliver high-speed, future-ready internet via an advanced fiber-optic network.
+                </p>
+                <p className="text-lg text-slate-400 mb-6 leading-relaxed">
+                  The company is the most trusted and cost-effective choice in the market, offering premium bandwidth and integrated OTT plans at rates significantly cheaper than competitors.
                 </p>
                 <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-                  Our state-of-the-art fiber optic network delivers symmetrical speeds, meaning your uploads are just as fast as your downloads. No gimmicks, no hidden fees. Just pure speed.
+                  Dedicated to serving thousands of satisfied subscribers, ONE Broadband provides a seamless and dependable digital experience built on technical excellence.
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-6">
