@@ -39,11 +39,9 @@ export default function App() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('#home')}>
-            <div className="bg-sky-500 p-2 w-8 h-8 rounded-lg flex items-center justify-center">
-              <span className="font-bold text-white text-sm leading-none">1</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight text-white uppercase">
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('#home')}>
+            <img src="https://i.ibb.co/B20Xw2zc/1broadband-logo.png" alt="One Broadband Logo" className="h-10 w-auto object-contain" />
+            <span className="text-xl font-bold tracking-tight text-white uppercase mt-1">
               One <span className="text-sky-400">Broadband</span>
             </span>
           </div>
@@ -489,11 +487,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-slate-900">
             <div className="col-span-1 md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="bg-sky-500 p-1.5 w-8 h-8 rounded-lg flex items-center justify-center">
-                  <span className="font-bold text-white text-sm leading-none">1</span>
-                </div>
-                <span className="text-xl font-bold tracking-tight text-white uppercase">
+              <div className="flex items-center gap-3 mb-4 cursor-pointer" onClick={() => scrollToSection('#home')}>
+                <img src="https://i.ibb.co/B20Xw2zc/1broadband-logo.png" alt="One Broadband Logo" className="h-10 w-auto object-contain" />
+                <span className="text-xl font-bold tracking-tight text-white uppercase mt-1">
                   One <span className="text-sky-400">Broadband</span>
                 </span>
               </div>
