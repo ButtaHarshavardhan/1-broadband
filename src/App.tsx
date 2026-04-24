@@ -61,7 +61,6 @@ export default function App() {
     { name: 'Home', href: '#home' },
     { name: 'About Us', href: '#about' },
     { name: 'Services', href: '#services' },
-    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -554,7 +553,7 @@ export default function App() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#about" className="hover:text-sky-400 transition-colors">About Us</a></li>
                 <li><a href="#" className="hover:text-sky-400 transition-colors">Careers</a></li>
-                <li><a href="#blog" className="hover:text-sky-400 transition-colors">News Output</a></li>
+                <li><a href="#sectors" className="hover:text-sky-400 transition-colors">Sectors</a></li>
                 <li><a href="#contact" className="hover:text-sky-400 transition-colors">Contact</a></li>
               </ul>
             </div>
