@@ -3,6 +3,49 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity } from 'lucide-react';
 import { AuraButton } from './components/AuraButton';
 
+const SectorCard = ({ post, delay }: { post: any, delay: number }) => {
+  const [expanded, setExpanded] = useState(false);
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay }}
+      className="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 cursor-pointer shadow-lg hover:border-sky-500/50 transition-colors"
+      onClick={() => setExpanded(!expanded)}
+    >
+      <div className="relative h-60 overflow-hidden">
+        <img 
+          src={post.img} 
+          alt={post.title} 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute top-4 left-4">
+           <span className="text-white backdrop-blur-md bg-black/50 border border-white/10 px-3 py-1 rounded-full text-xs font-medium">{post.category}</span>
+        </div>
+      </div>
+      <div className="p-6">
+        <h4 className="text-xl font-bold text-white transition-colors leading-snug mb-3 hover:text-sky-400">
+          {post.title}
+        </h4>
+        <AnimatePresence>
+          {expanded && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="overflow-hidden"
+            >
+              {post.content}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  );
+};
+
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -246,7 +289,7 @@ export default function App() {
         <section id="services" className="py-24 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest w-fit mb-4">Our Plans</div>
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest w-fit mb-4">Our Plan/ Month</div>
               <h3 className="text-4xl font-extrabold text-white mb-4 tracking-tight">Choose the perfect speed for your needs</h3>
               <p className="text-lg text-slate-400">All plans include unlimited data, free equipment rental, and our price-lock guarantee.</p>
             </div>
@@ -254,28 +297,28 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  name: 'Essential',
-                  speed: '300 Mbps',
-                  price: '49.99',
+                  name: 'Residential',
+                  speed: 'Up to 60 Mbps',
+                  price: '499',
                   desc: 'Perfect for browsing, emails, and standard HD streaming.',
-                  features: ['Symmetrical Speeds', 'Connect up to 10 devices', 'Standard WiFi Router', 'No Contracts'],
+                  features: ['50 Mbps @ ₹499/mo', '60 Mbps @ ₹599/mo', 'Unlimited Data', 'Symmetrical Speeds', 'Standard WiFi Router'],
                   icon: <Globe className="w-8 h-8 text-sky-400" />
                 },
                 {
-                  name: 'Pro',
-                  speed: '500 Mbps',
-                  price: '69.99',
-                  desc: 'Ideal for 4K streaming, online gaming, and working from home.',
-                  features: ['Symmetrical Speeds', 'Connect up to 25 devices', 'Smart WiFi 6 Router', 'No Contracts', 'Priority Support'],
+                  name: 'Community & Campus Connect',
+                  speed: 'Up to 100 Mbps',
+                  price: '699',
+                  desc: 'Ideal for multiple devices, online learning, and remote work.',
+                  features: ['75 Mbps @ ₹699/mo', '100 Mbps @ ₹799/mo', 'Unlimited Data', 'Symmetrical Speeds', 'Smart WiFi Router'],
                   icon: <Zap className="w-8 h-8 text-white" />,
                   popular: true
                 },
                 {
-                  name: 'Gigabit',
-                  speed: '1000 Mbps',
-                  price: '89.99',
+                  name: 'The Professional Choice',
+                  speed: 'Up to 200 Mbps',
+                  price: '899',
                   desc: 'Ultimate speed for heavy users, large families, and creators.',
-                  features: ['Symmetrical Speeds', 'Unlimited devices', 'Mesh WiFi System Included', 'No Contracts', '24/7 Priority Support'],
+                  features: ['150 Mbps @ ₹899/mo', '200 Mbps @ ₹999/mo', 'Unlimited Data', 'Symmetrical Speeds', 'Mesh WiFi System Included', 'Priority Support'],
                   icon: <Shield className="w-8 h-8 text-sky-400" />
                 }
               ].map((plan, index) => (
@@ -299,7 +342,8 @@ export default function App() {
                   <p className={`${plan.popular ? 'text-blue-100' : 'text-slate-400'} text-sm mb-6 h-10`}>{plan.desc}</p>
                   
                   <div className={`mb-6 pb-6 border-b ${plan.popular ? 'border-white/20' : 'border-slate-800'}`}>
-                    <span className="text-5xl font-extrabold text-white">${plan.price}</span>
+                    <div className={`text-sm font-semibold mb-1 uppercase tracking-wider ${plan.popular ? 'text-blue-100' : 'text-slate-400'}`}>Starting at</div>
+                    <span className="text-5xl font-extrabold text-white">₹{plan.price}</span>
                     <span className={`${plan.popular ? 'text-blue-200' : 'text-slate-500'} font-medium`}>/mo</span>
                   </div>
                   
@@ -326,63 +370,56 @@ export default function App() {
           </div>
         </section>
 
-        {/* Blog Section */}
-        <section id="blog" className="py-24 bg-slate-900 border-b border-slate-800">
+        {/* Sectors Section */}
+        <section id="sectors" className="py-24 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div className="max-w-2xl">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest w-fit mb-4">Latest News</div>
-                <h3 className="text-4xl font-extrabold text-white tracking-tight">Insights from One Broadband</h3>
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest w-fit mb-4">Industries</div>
+                <h3 className="text-4xl font-extrabold text-white tracking-tight">Sectors We Serve</h3>
               </div>
-              <AuraButton>
-                View All Articles
-              </AuraButton>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  title: 'Why Fiber Optic is the Future of Home Connectivity',
-                  date: 'Oct 12, 2023',
-                  category: 'Technology',
-                  img: 'https://images.unsplash.com/photo-1558227691-41ea78d1f631?q=80&w=1974&auto=format&fit=crop'
+                  title: 'Education: Medical & Engineering Colleges',
+                  category: 'Education',
+                  img: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2070&auto=format&fit=crop',
+                  content: (
+                    <div className="text-sm text-slate-400 mt-4 space-y-3">
+                      <p>Modern campuses require massive data throughput for high-resolution research and seamless student connectivity.</p>
+                      <p><strong className="text-white">Hyper-Scale Bandwidth:</strong> Dedicated 1:1 leased lines to support thousands of concurrent users without speed drops during peak hours.</p>
+                      <p><strong className="text-white">Campus-Wide WiFi:</strong> High-density mesh solutions for seamless roaming across lecture halls, laboratories, and hostels.</p>
+                    </div>
+                  )
                 },
                 {
-                  title: 'How to Optimize Your Home Network for Remote Work',
-                  date: 'Sep 28, 2023',
-                  category: 'Tips & Tricks',
-                  img: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=2064&auto=format&fit=crop'
+                  title: 'Financial Sector: Banks (Ballari)',
+                  category: 'Finance',
+                  img: 'https://images.unsplash.com/photo-1501167733086-cb7f9c8da4c8?q=80&w=1974&auto=format&fit=crop',
+                  content: (
+                    <div className="text-sm text-slate-400 mt-4 space-y-3">
+                      <p>For banking, uptime is a regulatory necessity. We prioritize military-grade security and zero-latency pathways.</p>
+                      <p><strong className="text-white">Secure OFC Pathways:</strong> Private, encrypted fiber routes to ensure data privacy and prevent interception for core banking operations.</p>
+                      <p><strong className="text-white">99.9% Uptime SLA:</strong> Proactive bandwidth maintenance and automatic failovers ensuring ATMs and servers never go offline.</p>
+                    </div>
+                  )
                 },
                 {
-                  title: 'Expanding Our Network: New Cities Added for 2024',
-                  date: 'Sep 15, 2023',
-                  category: 'Company News',
-                  img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2070&auto=format&fit=crop'
+                  title: 'Public/Government Sector',
+                  category: 'Public Sector',
+                  img: 'https://images.unsplash.com/photo-1523531294919-4bab31acd8e3?q=80&w=2070&auto=format&fit=crop',
+                  content: (
+                    <div className="text-sm text-slate-400 mt-4 space-y-3">
+                      <p>Railway environments require rugged, high-performance connectivity that can withstand extreme physical conditions.</p>
+                      <p><strong className="text-white">Ruggedized OFC Cabling:</strong> Industrial-grade fiber deployment designed to handle the vibrations and environmental stress of railway tracks.</p>
+                      <p><strong className="text-white">Public Hotspots &amp; Monitoring:</strong> High-capacity WiFi for passenger terminals and 24/7 NOC support to manage high-mobility traffic zones.</p>
+                    </div>
+                  )
                 }
               ].map((post, i) => (
-                <motion.div
-                  key={post.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="overflow-hidden rounded-2xl mb-4 h-60 border border-slate-800 shadow-lg">
-                    <img 
-                      src={post.img} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="flex items-center gap-4 text-xs font-medium mb-3">
-                    <span className="text-sky-400 bg-sky-500/10 border border-sky-500/20 px-2 py-1 rounded-md">{post.category}</span>
-                    <span className="text-slate-500">{post.date}</span>
-                  </div>
-                  <h4 className="text-xl font-bold text-white group-hover:text-sky-400 transition-colors leading-snug">
-                    {post.title}
-                  </h4>
-                </motion.div>
+                <SectorCard key={i} post={post} delay={i * 0.1} />
               ))}
             </div>
           </div>
