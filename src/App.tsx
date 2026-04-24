@@ -450,7 +450,7 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="text-lg font-medium text-white">Call Us</h4>
-                      <p className="text-slate-400 text-sm mt-1">1-800-ONE-FAST</p>
+                      <p className="text-slate-400 text-sm mt-1">+91 94483 23359, +91 93413 08850</p>
                       <p className="text-slate-400 text-sm">Available Mon-Fri, 8am-8pm</p>
                     </div>
                   </div>
