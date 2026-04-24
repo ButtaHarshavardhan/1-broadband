@@ -472,7 +472,7 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="text-lg font-medium text-white">Headquarters</h4>
-                      <p className="text-slate-400 text-sm mt-1">100 Fiber Way, Suite 400<br/>San Francisco, CA 94105</p>
+                      <p className="text-slate-400 text-sm mt-1">Gandhi Nagar, Ballari<br/>Karnataka, 583101</p>
                     </div>
                   </div>
                 </div>
