@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity } from 'lucide-react';
+import { AuraButton } from './components/AuraButton';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,12 +63,9 @@ export default function App() {
               </a>
             ))}
             <div className="flex items-center gap-4 ml-4">
-              <button 
-                onClick={() => scrollToSection('#contact')}
-                className="px-5 py-2 rounded-full bg-sky-500 text-white text-sm font-semibold hover:bg-sky-400 transition-colors"
-              >
+              <AuraButton onClick={() => scrollToSection('#contact')}>
                 Check Availability
-              </button>
+              </AuraButton>
             </div>
           </nav>
 
@@ -106,12 +104,12 @@ export default function App() {
                 </a>
               ))}
               <div className="flex flex-col gap-4 mt-4">
-                <button 
+                <AuraButton 
                   onClick={() => scrollToSection('#contact')}
-                  className="bg-sky-500 text-white px-6 py-4 rounded-xl text-lg font-semibold w-full"
+                  className="w-full justify-center"
                 >
                   Check Availability
-                </button>
+                </AuraButton>
               </div>
             </div>
           </motion.div>
@@ -144,11 +142,11 @@ export default function App() {
                 <p className="text-lg text-slate-400 max-w-lg mb-2">
                   Experience symmetrical gigabit speeds and zero-latency gaming. We bring next-gen fiber straight to your doorstep.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-0 max-w-xl w-full">
-                  <input type="text" placeholder="Enter Postcode (e.g. SW1A 1AA)" className="flex-1 px-6 py-4 rounded-t-2xl sm:rounded-l-2xl sm:rounded-tr-none bg-slate-800 border sm:border-r-0 border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 text-white placeholder:text-slate-500" />
-                  <button onClick={() => scrollToSection('#contact')} className="px-8 py-4 bg-sky-500 rounded-b-2xl sm:rounded-r-2xl sm:rounded-bl-none font-bold text-white hover:bg-sky-400 transition-colors whitespace-nowrap">
+                <div className="flex flex-col sm:flex-row gap-4 max-w-xl w-full">
+                  <input type="text" placeholder="Enter Postcode (e.g. SW1A 1AA)" className="flex-1 px-6 py-4 rounded-2xl bg-slate-800 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 text-white placeholder:text-slate-500" />
+                  <AuraButton onClick={() => scrollToSection('#contact')} className="flex-shrink-0">
                     Check Availability
-                  </button>
+                  </AuraButton>
                 </div>
                 
                 <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 mt-2">
@@ -319,11 +317,9 @@ export default function App() {
                     ))}
                   </ul>
                   
-                  <button className={`w-full py-4 rounded-xl font-semibold transition-all ${
-                    plan.popular ? 'bg-white hover:bg-slate-100 text-slate-900 shadow-xl shadow-indigo-900/20 hover:-translate-y-0.5' : 'bg-slate-700 hover:bg-slate-600 text-white'
-                  }`}>
+                  <AuraButton className="w-full">
                     Select {plan.name}
-                  </button>
+                  </AuraButton>
                 </motion.div>
               ))}
             </div>
@@ -338,9 +334,9 @@ export default function App() {
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest w-fit mb-4">Latest News</div>
                 <h3 className="text-4xl font-extrabold text-white tracking-tight">Insights from One Broadband</h3>
               </div>
-              <button className="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-2 group transition-colors">
-                View All Articles <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              <AuraButton>
+                View All Articles
+              </AuraButton>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -475,9 +471,9 @@ export default function App() {
                     <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all resize-none placeholder:text-slate-500" placeholder="How can we help you?"></textarea>
                   </div>
                   
-                  <button type="submit" className="w-full bg-sky-500 hover:bg-sky-400 text-white font-bold py-4 rounded-xl transition-colors mt-2">
+                  <AuraButton type="submit" className="w-full mt-2">
                     Send Message
-                  </button>
+                  </AuraButton>
                 </form>
               </motion.div>
             </div>
