@@ -238,14 +238,12 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                 )
               },
               {
-                title: 'Public/Government Sector',
+                title: 'State Government / Central Government',
                 category: 'Public Sector',
                 img: 'https://images.unsplash.com/photo-1523531294919-4bab31acd8e3?q=80&w=2070&auto=format&fit=crop',
                 content: (
                   <div className="text-sm text-slate-400 mt-4 space-y-3">
-                    <p>Railway environments require rugged, high-performance connectivity that can withstand extreme physical conditions.</p>
-                    <p><strong className="text-white">Ruggedized OFC Cabling:</strong> Industrial-grade fiber deployment designed to handle the vibrations and environmental stress of railway tracks.</p>
-                    <p><strong className="text-white">Public Hotspots &amp; Monitoring:</strong> High-capacity WiFi for passenger terminals and 24/7 NOC support to manage high-mobility traffic zones.</p>
+                    <p>ONE Broadband provides high-speed internet to the Bellary ZP office, specifically supporting the Assistant Executive Engineers in the Rural Development department with dedicated, reliable connectivity. Our robust fiber-optic network streamlines essential engineering operations and digital administration, ensuring the efficient execution of vital rural infrastructure projects. By powering these key departments, we remain a trusted partner in bridging the digital gap for district-level government initiatives.</p>
                   </div>
                 )
               }
