@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity } from 'lucide-react';
 import { AuraButton } from './components/AuraButton';
 
-const SectorCard = ({ post, delay, expanded, onClick }: { post: any, delay: number, expanded: boolean, onClick: () => void }) => {
+const SectorCard = ({ post, delay, expanded, onClick }: { post: any, delay: number, expanded: boolean, onClick: () => void, key?: React.Key }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -286,84 +286,64 @@ export default function App() {
         {/* Services Section */}
         <section id="services" className="py-24 bg-slate-900 border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-bold uppercase tracking-widest w-fit mb-4">Our Plan/ Month</div>
-              <h3 className="text-4xl font-extrabold text-white mb-4 tracking-tight">Choose the perfect speed for your needs</h3>
-              <p className="text-lg text-slate-400">All plans include unlimited data, free equipment rental, and our price-lock guarantee.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: 'Residential',
-                  speed: 'Up to 60 Mbps',
-                  price: '499',
-                  desc: 'Perfect for browsing, emails, and standard HD streaming.',
-                  features: ['50 Mbps @ ₹499/mo', '60 Mbps @ ₹599/mo', 'Unlimited Data', 'Symmetrical Speeds', 'Standard WiFi Router'],
-                  icon: <Globe className="w-8 h-8 text-sky-400" />
-                },
-                {
-                  name: 'Community & Campus Connect',
-                  speed: 'Up to 100 Mbps',
-                  price: '699',
-                  desc: 'Ideal for multiple devices, online learning, and remote work.',
-                  features: ['75 Mbps @ ₹699/mo', '100 Mbps @ ₹799/mo', 'Unlimited Data', 'Symmetrical Speeds', 'Smart WiFi Router'],
-                  icon: <Zap className="w-8 h-8 text-white" />,
-                  popular: true
-                },
-                {
-                  name: 'The Professional Choice',
-                  speed: 'Up to 200 Mbps',
-                  price: '899',
-                  desc: 'Ultimate speed for heavy users, large families, and creators.',
-                  features: ['150 Mbps @ ₹899/mo', '200 Mbps @ ₹999/mo', 'Unlimited Data', 'Symmetrical Speeds', 'Mesh WiFi System Included', 'Priority Support'],
-                  icon: <Shield className="w-8 h-8 text-sky-400" />
-                }
-              ].map((plan, index) => (
-                <motion.div
-                  key={plan.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`${plan.popular ? 'bg-gradient-to-br from-sky-600 to-indigo-700 border border-white/10 shadow-2xl relative md:-mt-4 md:mb-4' : 'bg-slate-800 border-slate-700 shadow-sm'} p-6 rounded-3xl border relative overflow-hidden`}
-                >
-                  {plan.popular && (
-                    <div className="absolute top-0 right-0 bg-white text-indigo-700 px-4 py-1.5 rounded-bl-xl text-xs font-bold uppercase tracking-wider shadow-md">
-                      Most Popular
+              <h3 className="text-4xl font-extrabold text-white mb-10 tracking-tight">Choose the perfect speed for your needs</h3>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-left bg-slate-800/50 p-8 md:p-10 rounded-3xl border border-slate-700 shadow-xl mb-12"
+              >
+                <h4 className="text-2xl font-bold text-white mb-8 text-center">Why choose us?</h4>
+                <div className="grid sm:grid-cols-2 gap-8 md:gap-12">
+                  <div className="space-y-8 text-slate-300">
+                    <div className="flex gap-4">
+                      <div className="bg-sky-500/20 p-3 rounded-full text-sky-400 shrink-0 h-fit">
+                        <Zap className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <strong className="text-lg text-white block mb-2">Blazing Fast Speeds</strong>
+                        <p className="text-slate-400">Experience symmetrical upload and download speeds perfectly tailored for streaming, gaming, and remote work.</p>
+                      </div>
                     </div>
-                  )}
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border ${plan.popular ? 'border-white/20 bg-white/10' : 'border-slate-700 bg-slate-900/50'}`}>
-                    {plan.icon}
+                    <div className="flex gap-4">
+                      <div className="bg-sky-500/20 p-3 rounded-full text-sky-400 shrink-0 h-fit">
+                        <Shield className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <strong className="text-lg text-white block mb-2">Unmatched Reliability</strong>
+                        <p className="text-slate-400">Backed by our 99.9% uptime SLA, your connection will stay strong exactly when you need it the most.</p>
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">{plan.name}</h4>
-                  <p className={`${plan.popular ? 'text-blue-100' : 'text-slate-400'} text-sm mb-6 h-10`}>{plan.desc}</p>
-                  
-                  <div className={`mb-6 pb-6 border-b ${plan.popular ? 'border-white/20' : 'border-slate-800'}`}>
-                    <div className={`text-sm font-semibold mb-1 uppercase tracking-wider ${plan.popular ? 'text-blue-100' : 'text-slate-400'}`}>Starting at</div>
-                    <span className="text-5xl font-extrabold text-white">₹{plan.price}</span>
-                    <span className={`${plan.popular ? 'text-blue-200' : 'text-slate-500'} font-medium`}>/mo</span>
+                  <div className="space-y-8 text-slate-300">
+                    <div className="flex gap-4">
+                      <div className="bg-sky-500/20 p-3 rounded-full text-sky-400 shrink-0 h-fit">
+                        <Globe className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <strong className="text-lg text-white block mb-2">Unlimited Data</strong>
+                        <p className="text-slate-400">No data caps, no throttling. Ever. Enjoy truly unlimited potential with every connection plan.</p>
+                      </div>
+                    </div>
+                    <div className="flex gap-4">
+                      <div className="bg-sky-500/20 p-3 rounded-full text-sky-400 shrink-0 h-fit">
+                        <Phone className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <strong className="text-lg text-white block mb-2">Local & Dedicated Support</strong>
+                        <p className="text-slate-400">Our expert team based right here is available 24/7. When you call, a real person answers.</p>
+                      </div>
+                    </div>
                   </div>
-                  
-                  <div className="mb-6">
-                    <div className={`text-sm font-semibold mb-2 uppercase tracking-wider ${plan.popular ? 'text-blue-100' : 'text-slate-400'}`}>Download & Upload</div>
-                    <div className={`text-3xl font-bold mb-8 ${plan.popular ? 'text-white' : 'text-sky-400'}`}>{plan.speed}</div>
-                  </div>
-                  
-                  <ul className={`space-y-4 mb-8 ${plan.popular ? 'text-blue-50' : 'text-slate-300'}`}>
-                    {plan.features.map(f => (
-                      <li key={f} className="flex items-start gap-3">
-                        <Check className={`w-5 h-5 shrink-0 mt-0.5 ${plan.popular ? 'text-white' : 'text-sky-500'}`} />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <AuraButton className="w-full">
-                    Select {plan.name}
-                  </AuraButton>
-                </motion.div>
-              ))}
+                </div>
+              </motion.div>
+              
+              <AuraButton onClick={() => scrollToSection('#contact')} className="px-8 py-4 text-lg">
+                View Our Plans
+              </AuraButton>
             </div>
           </div>
         </section>
