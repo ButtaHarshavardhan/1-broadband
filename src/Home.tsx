@@ -110,7 +110,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
               </div>
               <h3 className="text-4xl font-extrabold text-white mb-6 tracking-tight">Connecting communities since 2010.</h3>
               <p className="text-lg text-slate-400 mb-6 leading-relaxed">
-                Led by Sreedhar R. M. and Managing Director Madhav Reddy, ONE Broadband leverages over 15 years of industry experience to deliver high-speed, future-ready internet via an advanced fiber-optic network.
+                Led by Madhav Reddy and Sreedhar R.M., ONE Broadband leverages over 15 years of industry experience to deliver high-speed, future-ready internet via an advanced fiber-optic network.
               </p>
               <p className="text-lg text-slate-400 mb-6 leading-relaxed">
                 The company is the most trusted and cost-effective choice in the market, offering premium bandwidth and integrated OTT plans at rates significantly cheaper than competitors.
@@ -280,7 +280,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-white">Call Us</h4>
-                    <p className="text-slate-400 text-sm mt-1">+91 94483 23359, +91 93413 08850</p>
+                    <p className="text-slate-400 text-sm mt-1">+91 93413 08850, +91 94483 23359</p>
                     <p className="text-slate-400 text-sm">Available Mon-Fri, 8am-8pm</p>
                   </div>
                 </div>
@@ -291,8 +291,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-white">Email Us</h4>
-                    <p className="text-slate-400 text-sm mt-1">support@onebroadband.com</p>
-                    <p className="text-slate-400 text-sm">sales@onebroadband.com</p>
+                    <p className="text-slate-400 text-sm mt-1">Ballarionebroadband@gmail.com</p>
                   </div>
                 </div>
                 
@@ -302,7 +301,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-white">Headquarters</h4>
-                    <p className="text-slate-400 text-sm mt-1">Gandhi Nagar, Ballari<br/>Karnataka, 583101</p>
+                    <p className="text-slate-400 text-sm mt-1">Amogha towers, second floor, 3rd road, Parvati nagar, Ballari.</p>
                   </div>
                 </div>
               </div>
