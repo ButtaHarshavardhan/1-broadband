@@ -192,9 +192,11 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
               </div>
             </motion.div>
             
-            <AuraButton onClick={() => navigate('/plans')} className="px-8 py-4 text-lg">
-              View Our Plans
-            </AuraButton>
+            <div className="flex justify-center w-full">
+              <AuraButton onClick={() => navigate('/plans')} className="px-8 py-4 text-lg">
+                View Our Plans
+              </AuraButton>
+            </div>
           </div>
         </div>
       </section>

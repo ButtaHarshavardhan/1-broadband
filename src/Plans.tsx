@@ -4,7 +4,7 @@ import { Check, Wifi, Shield, Globe } from 'lucide-react';
 import { AuraButton } from './components/AuraButton';
 import { useNavigate } from 'react-router-dom';
 
-export default function Plans() {
+export default function Plans({ scrollToSection }: { scrollToSection: (href: string) => void }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export default function Plans() {
                 </ul>
                 
                 <AuraButton 
-                  onClick={() => navigate('/#contact')} 
+                  onClick={() => scrollToSection('#contact')} 
                   className="w-full"
                 >
                   Select Plan

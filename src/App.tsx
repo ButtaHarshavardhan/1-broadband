@@ -136,7 +136,7 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home scrollToSection={scrollToSection} />} />
-          <Route path="/plans" element={<Plans />} />
+          <Route path="/plans" element={<Plans scrollToSection={scrollToSection} />} />
         </Routes>
       </main>
 
