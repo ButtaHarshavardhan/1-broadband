@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity } from 'lucide-react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Link } from 'react-router-dom';
 import { AuraButton } from './components/AuraButton';
 import Plans from './Plans';
 import Home from './Home';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfService from './TermsOfService';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -137,6 +139,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home scrollToSection={scrollToSection} />} />
           <Route path="/plans" element={<Plans scrollToSection={scrollToSection} />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
         </Routes>
       </main>
 
@@ -190,9 +194,9 @@ export default function App() {
           <div className="flex flex-col md:flex-row items-center justify-between text-sm">
             <p>&copy; {new Date().getFullYear()} One Broadband. All rights reserved.</p>
             <div className="flex gap-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-sky-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-sky-400 transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-sky-400 transition-colors">Cookie Policy</a>
+              <Link to="/privacy" className="hover:text-sky-400 transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-sky-400 transition-colors">Terms of Service</Link>
+              <Link to="/privacy" className="hover:text-sky-400 transition-colors">Cookie Policy</Link>
             </div>
           </div>
         </div>
