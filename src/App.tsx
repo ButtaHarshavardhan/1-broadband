@@ -163,9 +163,7 @@ export default function App() {
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Residential Plans</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Business Solutions</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Fiber Expansion</a></li>
+                <li><Link to="/plans" className="hover:text-sky-400 transition-colors">Residential Plans</Link></li>
                 <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('#contact'); }} className="hover:text-sky-400 transition-colors">Check Availability</a></li>
               </ul>
             </div>
@@ -174,8 +172,6 @@ export default function App() {
               <h4 className="text-white font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#about" className="hover:text-sky-400 transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Careers</a></li>
-                <li><a href="#sectors" className="hover:text-sky-400 transition-colors">Sectors</a></li>
                 <li><a href="#contact" className="hover:text-sky-400 transition-colors">Contact</a></li>
               </ul>
             </div>
@@ -184,9 +180,6 @@ export default function App() {
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-sky-400 transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Network Status</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Pay Bill</a></li>
-                <li><a href="#" className="hover:text-sky-400 transition-colors">Test Speed</a></li>
               </ul>
             </div>
           </div>
