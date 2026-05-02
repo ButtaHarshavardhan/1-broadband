@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity } from 'lucide-react';
+import { Wifi, Menu, X, Check, Phone, Mail, MapPin, ArrowRight, Zap, Shield, Globe, Activity, Sun, Wrench, Briefcase, Trophy, Clock } from 'lucide-react';
 import { AuraButton } from './components/AuraButton';
 import { SectorCard } from './components/SectorCard';
 import { useNavigate } from 'react-router-dom';
@@ -346,6 +346,157 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                 </AuraButton>
               </form>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Srimadhav Solartech Section */}
+      <section id="solartech" className="py-24 bg-amber-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 bg-white border border-yellow-500 rounded-3xl p-8 md:p-12 shadow-2xl">
+            {/* Left Column - Details */}
+            <div className="space-y-8 flex flex-col justify-between">
+              <div>
+                <div className="inline-flex items-center px-4 py-1 rounded-full border border-yellow-600 text-yellow-700 text-xs font-bold uppercase tracking-widest w-fit mb-6">
+                  <span className="w-2 h-2 rounded-full bg-yellow-600 mr-2"></span> SOLAR ENERGY TECH
+                </div>
+                <h3 className="text-4xl md:text-5xl font-serif font-bold mb-2 text-slate-900">
+                  SRIMADHAV <br className="hidden md:block"/>
+                  <span className="text-yellow-600">SOLARTECH</span>
+                </h3>
+                <p className="text-xs font-bold tracking-[0.2em] text-slate-800 uppercase mb-8">
+                  BALLARI &bull; HARNESS THE POWER OF THE SUN
+                </p>
+                <p className="text-slate-600 mb-8 max-w-md leading-relaxed">
+                  Premium solar panel installation, maintenance & subsidy assistance for homes and businesses across Ballari region.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center gap-3 p-3 rounded-xl border border-yellow-200 bg-yellow-50/50">
+                    <Sun className="w-5 h-5 text-yellow-600" />
+                    <span className="text-sm font-semibold text-slate-800">Solar Installation</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 rounded-xl border border-yellow-200 bg-yellow-50/50">
+                    <Clock className="w-5 h-5 text-slate-400" />
+                    <span className="text-sm font-semibold text-slate-800">AMC & Maintenance</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 rounded-xl border border-yellow-200 bg-yellow-50/50">
+                    <Briefcase className="w-5 h-5 text-amber-700" />
+                    <span className="text-sm font-semibold text-slate-800">Govt. Subsidy Help</span>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 rounded-xl border border-yellow-200 bg-yellow-50/50">
+                    <Activity className="w-5 h-5 text-red-500" />
+                    <span className="text-sm font-semibold text-slate-800">Net Metering</span>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-4 rounded-xl border border-yellow-200 bg-yellow-50/50 mb-10 text-yellow-800 font-medium">
+                  <Trophy className="w-5 h-5 text-yellow-600" />
+                  <span>Trusted Solar Energy Partner in Ballari</span>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-xs font-bold tracking-widest text-yellow-700 mb-6 uppercase">Contact Information</h4>
+                
+                <div className="flex items-center gap-4 mb-6 pb-6 border-b border-yellow-100">
+                  <div className="w-12 h-12 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold text-lg">
+                    MR
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Managing Director</p>
+                    <p className="text-lg font-bold text-slate-900">Madhav Reddy</p>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 border border-yellow-200 rounded-lg text-slate-500">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-yellow-700 uppercase tracking-widest">Phone</p>
+                      <p className="text-sm font-bold text-slate-800">+91 93413 08850</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 border border-yellow-200 rounded-lg text-slate-500">
+                      <Mail className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-yellow-700 uppercase tracking-widest">Gmail</p>
+                      <p className="text-sm font-bold text-slate-800">srimadhavsolartech2025@gmail.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 border border-yellow-200 rounded-lg text-sky-500">
+                      <Globe className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-yellow-700 uppercase tracking-widest">Website</p>
+                      <p className="text-sm font-bold text-slate-800">www.srimadhavsolartechballari.com</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 border border-yellow-200 rounded-lg text-slate-500">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-yellow-700 uppercase tracking-widest">Hours</p>
+                      <p className="text-sm font-bold text-slate-800">Mon – Sat | 9 AM – 6 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Email Form */}
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 h-full flex flex-col justify-center">
+              <h4 className="text-2xl font-bold mb-2 text-slate-900">Request a Solar Quote</h4>
+              <p className="text-sm text-slate-500 mb-8">Fill out the form below and our solar experts will get back to you with a free consultation.</p>
+              
+              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">First Name</label>
+                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="Jane" />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Last Name</label>
+                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="Doe" />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
+                  <input type="email" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="jane@example.com" />
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Phone Number</label>
+                  <input type="tel" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="+91 98765 43210" />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Property Type</label>
+                  <select className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all text-slate-800">
+                    <option>Residential Home</option>
+                    <option>Commercial Building</option>
+                    <option>Industrial Facility</option>
+                    <option>Agricultural Land</option>
+                  </select>
+                </div>
+                
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Message</label>
+                  <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all resize-none placeholder:text-slate-400 text-slate-800" placeholder="Tell us about your energy needs..."></textarea>
+                </div>
+                
+                <button className="w-full mt-4 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl shadow-yellow-600/30">
+                  Submit Request
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
