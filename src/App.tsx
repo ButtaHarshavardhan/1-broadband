@@ -81,21 +81,27 @@ export default function App() {
                 {link.name}
               </a>
             ))}
-            <div className="flex items-center gap-4 ml-4">
-              <AuraButton onClick={() => scrollToSection('#contact')}>
-                Check Availability
-              </AuraButton>
+            <div className="flex items-center gap-6 ml-4">
+              <a href="tel:+919341308850" className="flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
+                <Phone className="w-4 h-4 text-sky-400" />
+                +91 93413 08850
+              </a>
             </div>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-slate-400 hover:text-white"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <a href="tel:+919341308850" className="p-2 text-sky-400 hover:text-sky-300 transition-colors">
+              <Phone className="w-5 h-5" />
+            </a>
+            <button
+              className="p-2 text-slate-400 hover:text-white"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -123,12 +129,13 @@ export default function App() {
                 </a>
               ))}
               <div className="flex flex-col gap-4 mt-4">
-                <AuraButton 
-                  onClick={() => scrollToSection('#contact')}
-                  className="w-full justify-center"
+                <a 
+                  href="tel:+919341308850"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-slate-800 border border-slate-700 text-white font-semibold text-lg hover:bg-slate-700 transition"
                 >
-                  Check Availability
-                </AuraButton>
+                  <Phone className="w-5 h-5 text-sky-400" />
+                  +91 93413 08850
+                </a>
               </div>
             </div>
           </motion.div>
