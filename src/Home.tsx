@@ -228,7 +228,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
               {
                 title: 'Financial Sector: Banks (Ballari)',
                 category: 'Finance',
-                img: 'https://images.unsplash.com/photo-1501167733086-cb7f9c8da4c8?q=80&w=1974&auto=format&fit=crop',
+                img: 'https://i.ibb.co/VcXfNnQw/Bank-Image-2026-05-01-at-7-11-42-PM.jpg',
                 content: (
                   <div className="text-sm text-slate-400 mt-4 space-y-3">
                     <p>For banking, uptime is a regulatory necessity. We prioritize military-grade security and zero-latency pathways.</p>
@@ -240,7 +240,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
               {
                 title: 'State Government / Central Government',
                 category: 'Public Sector',
-                img: 'https://images.unsplash.com/photo-1523531294919-4bab31acd8e3?q=80&w=2070&auto=format&fit=crop',
+                img: 'https://i.ibb.co/234jpVf0/Gemini-Generated-Image-hz9qfshz9qfshz9q.png',
                 content: (
                   <div className="text-sm text-slate-400 mt-4 space-y-3">
                     <p>ONE Broadband provides high-speed internet to the Bellary ZP office, specifically supporting the Assistant Executive Engineers in the Rural Development department with dedicated, reliable connectivity. Our robust fiber-optic network streamlines essential engineering operations and digital administration, ensuring the efficient execution of vital rural infrastructure projects. By powering these key departments, we remain a trusted partner in bridging the digital gap for district-level government initiatives.</p>
