@@ -314,31 +314,33 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
               className="bg-slate-800 border border-slate-700 rounded-3xl p-8 md:p-10 shadow-2xl text-white"
             >
               <h4 className="text-2xl font-bold mb-6">Send us a message</h4>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+                <input type="hidden" name="access_key" value="4c6e69f3-5edf-44d1-87d2-50b0fd2e4144" />
+                <input type="hidden" name="subject" value="New Submission from One Broadband Contact Form" />
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-1">First Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="Jane" />
+                    <input type="text" name="first_name" required className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="Jane" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-slate-400 mb-1">Last Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="Doe" />
+                    <input type="text" name="last_name" required className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="Doe" />
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-1">Email Address</label>
-                  <input type="email" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="jane@example.com" />
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="jane@example.com" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-1">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="(555) 123-4567" />
+                  <input type="tel" name="phone" className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all placeholder:text-slate-500" placeholder="(555) 123-4567" />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-1">Message</label>
-                  <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all resize-none placeholder:text-slate-500" placeholder="How can we help you?"></textarea>
+                  <textarea rows={4} name="message" required className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-transparent transition-all resize-none placeholder:text-slate-500" placeholder="How can we help you?"></textarea>
                 </div>
                 
                 <AuraButton type="submit" className="w-full mt-2">
@@ -455,44 +457,46 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
               <h4 className="text-2xl font-bold mb-2 text-slate-900">Request a Solar Quote</h4>
               <p className="text-sm text-slate-500 mb-8">Fill out the form below and our solar experts will get back to you with a free consultation.</p>
               
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form action="https://api.web3forms.com/submit" method="POST" className="space-y-4">
+                <input type="hidden" name="access_key" value="4c6e69f3-5edf-44d1-87d2-50b0fd2e4144" />
+                <input type="hidden" name="subject" value="New Solar Quote Request" />
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">First Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="Jane" />
+                    <input type="text" name="first_name" required className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="Jane" />
                   </div>
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Last Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="Doe" />
+                    <input type="text" name="last_name" required className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="Doe" />
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Email Address</label>
-                  <input type="email" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="jane@example.com" />
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="jane@example.com" />
                 </div>
                 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Phone Number</label>
-                  <input type="tel" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="+91 98765 43210" />
+                  <input type="tel" name="phone" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all placeholder:text-slate-400 text-slate-800" placeholder="+91 98765 43210" />
                 </div>
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Property Type</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all text-slate-800">
-                    <option>Residential Home</option>
-                    <option>Commercial Building</option>
-                    <option>Industrial Facility</option>
-                    <option>Agricultural Land</option>
+                  <select name="property_type" className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all text-slate-800">
+                    <option value="Residential Home">Residential Home</option>
+                    <option value="Commercial Building">Commercial Building</option>
+                    <option value="Industrial Facility">Industrial Facility</option>
+                    <option value="Agricultural Land">Agricultural Land</option>
                   </select>
                 </div>
                 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Message</label>
-                  <textarea rows={4} className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all resize-none placeholder:text-slate-400 text-slate-800" placeholder="Tell us about your energy needs..."></textarea>
+                  <textarea rows={4} name="message" required className="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all resize-none placeholder:text-slate-400 text-slate-800" placeholder="Tell us about your energy needs..."></textarea>
                 </div>
                 
-                <button className="w-full mt-4 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl shadow-yellow-600/30">
+                <button type="submit" className="w-full mt-4 bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg hover:shadow-xl shadow-yellow-600/30">
                   Submit Request
                 </button>
               </form>
