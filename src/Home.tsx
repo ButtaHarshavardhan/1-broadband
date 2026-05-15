@@ -436,7 +436,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                     </div>
                     <div>
                       <p className="text-xs font-bold text-yellow-700 uppercase tracking-widest">Website</p>
-                      <p className="text-sm font-bold text-slate-800">www.srimadhavsolartechballari.com</p>
+                      <p className="text-sm font-bold text-slate-800">www.srimadhavsolartech.in</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
