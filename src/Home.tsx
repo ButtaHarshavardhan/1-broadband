@@ -291,7 +291,7 @@ export default function Home({ scrollToSection }: { scrollToSection: (href: stri
                   </div>
                   <div>
                     <h4 className="text-lg font-medium text-white">Email Us</h4>
-                    <p className="text-slate-400 text-sm mt-1">Ballarionebroadband@gmail.com</p>
+                    <p className="text-slate-400 text-sm mt-1">bellaryonebroadband@gmail.com</p>
                   </div>
                 </div>
                 
