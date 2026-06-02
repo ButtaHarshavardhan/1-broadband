@@ -191,8 +191,22 @@ export default function App() {
             </div>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center justify-between text-sm">
-            <p>&copy; {new Date().getFullYear()} One Broadband. All rights reserved.</p>
+          <div className="flex flex-col md:flex-row items-center justify-between text-sm gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
+              <p>&copy; {new Date().getFullYear()} One Broadband. All rights reserved.</p>
+              <span className="hidden md:inline text-slate-800">|</span>
+              <p className="text-slate-500">
+                Designed and Built by{' '}
+                <a 
+                  href="https://vertexflows.in" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="font-medium text-slate-400 hover:text-sky-400 transition-colors"
+                >
+                  Vertex Flows
+                </a>
+              </p>
+            </div>
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link to="/privacy" className="hover:text-sky-400 transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="hover:text-sky-400 transition-colors">Terms of Service</Link>
